@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>はじめてのHTML　H-10続き</title>
+    </head>
+    <body>
+        <h1>アンケートフォーム　入力内容</h1>
+        <dl>
+            <dt>お名前</dt>
+            <dd id="your_name"></dd>
+            <dt>メールアドレス</dt>
+            <dd id="your_mail"></dd>
+            <dt>性別</dt>
+            <dd id="gender"></dd>
+            <dt>出来ること</dt>
+            <dd id="skill"></dd>
+        </dl>
+
+    </body>
+</html>
+<script>
+    function GetQueryString()
+    {
+        var result = {};
+        if( 1 < window.location.search.length )
+        {
+            // 最初の1文字 (?記号) を除いた文字列を取得する
+            var query = window.location.search.substring( 1 );
+
+            // クエリの区切り記号 (&) で文字列を配列に分割する
+            var parameters = query.split( '&' );
+
+            for( var i = 0; i < parameters.length; i++ )
+            {
+                // パラメータ名とパラメータ値に分割する
+                var element = parameters[ i ].split( '=' );
+
+                var paramName = decodeURIComponent( element[ 0 ] );
+                var paramValue = decodeURIComponent( element[ 1 ] );
+
+                // パラメータ名をキーとして連想配列に追加する
+                 if(result[ paramName ]){
+                    result[ paramName ] = result[ paramName ] + "," + paramValue
+                 } else{
+                    result[ paramName ] = paramValue;
+                 }
+            }
+        }
+        return result;
+    }
+
+    const query = GetQueryString();
+    const dds = document.querySelectorAll('dd');
+
+    dds.forEach( dd =>{
+            dd.innerText = query[dd.id];
+            console.log(query[dd.id])
+        }
+    )
+
+</script>
