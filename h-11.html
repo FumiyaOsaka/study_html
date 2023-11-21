@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head lang="ja">
+    <meta charset="UTF-8" />
+    <title>はじめてのHTML　H-11</title>
+  </head>
+  <body>
+    <h1>アンケートフォーム続き</h1>
+      <form action="https://httpbin.org/post" method="post">
+        <dl>
+          <dt><label for="your_pass">パスワード</label></dt>
+          <dd>
+            <input type="password" id="your_pass" name="your_pass">
+          </dd>
+          <dt><label for="search">学びたいプログラミング言語(自由記載)</label></dt>
+          <dd>
+            <input type="search" id="search" name="search" placeholder="(例)Javascript">
+          </dd>
+          <dt><label for="your_area">その他自由記入欄</label></dt>
+          <dd>
+            <textarea id="your_area" name="your_area" cols=100 rows=5></textarea>
+          </dd>
+          <dt><label for="your_pref">出身地</label></dt>
+          <dd>
+            <select id="your_pref" name="your_pref">
+              <option value="青森">青森</option>
+              <option value="埼玉">埼玉</option>
+              <option value="大阪">大阪</option>
+            </select>
+          <dt><label for="date">入力日</label></dt>
+          <dd>
+            <input type="date" id="date" name="date">
+          </dd>
+        </dl>
+        <p><button type="submit">送信する</button></p>
+      </form>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head lang="ja">
+    <meta charset="UTF-8" />
+    <title>はじめてのHTML　H-10</title>
+  </head>
+  <body>
+    <h1>アンケートフォーム</h1>
+      <form action="res/h-10_res.html" method="get">
+        <dl>
+          <dt><label for="your_name">お名前</label></dt>
+          <dd>
+            <input type="text" id="your_name" name="your_name">
+          </dd>
+          <dt><label for="your_mail">メールアドレス</label></dt>
+          <dd>
+            <input type="text" id="your_mail" name="your_mail">
+          </dd>
+          <dt>性別</dt>
+          <dd>
+            <ul>
+              <li>
+                <label><input type="radio" name="gender" value="男">男性</label>
+              </li>
+              <li>
+                <label><input type="radio" name="gender" value="女">女性</label>
+              </li>
+            </ul>
+          </dd>
+          <dt>出来ること（複数選択可）</dt>
+          <dd>
+            <ul>
+              <li>
+                <label><input type="checkbox" name="skill" value="HTML">HTML</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="skill" value="CSS">CSS</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="skill" value="JavaScript">JavaScript</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="skill" value="PHP">PHP</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="skill" value="SQL">SQL</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="skill" value="Photoshop">Photoshop</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="skill" value="Illustrator">Illustrator</label>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+        <p><input type="submit" value="送信する"></p>
+      </form>
+  </body>
+</html>
